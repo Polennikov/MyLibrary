@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    {{ include('Default/Header.html.twig') }}
+    <section>
+        <div class="reg">
+            <div class="ContentSection">
+                <div class="Content">
+                    {% set formErrors = registrationForm.vars.errors.form.getErrors(true) %}
+                    {% if formErrors|length %}
+                        <h4 class="errorMessage">Предупреждения!</h4>
+                        <ul class="blockError">
+                            {% for error in formErrors %}
+                                <li class="errorMessage">{{ error.message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="Content">
+                    <h1>Регистрация</h1>
+                    {{ form_start(registrationForm) }}
+                    <h3>{{ form_label(registrationForm.nameUser) }}</h3>
+                    <div>{{ form_widget(registrationForm.nameUser) }}</div>
+                    <h3>{{ form_label(registrationForm.email) }}</h3>
+                    <div>{{ form_widget(registrationForm.email) }}</div>
+                    <h3>{{ form_label(registrationForm.plainPassword.first) }}</h3>
+                    <div>{{ form_widget(registrationForm.plainPassword.first) }}</div>
+                    <h3>{{ form_label(registrationForm.plainPassword.second) }}</h3>
+                    <div>{{ form_widget(registrationForm.plainPassword.second) }}</div>
+                    <div>{{ form_label(registrationForm.agreeTerms) }}</div>
+                    <div>{{ form_widget(registrationForm.agreeTerms) }}</div>
+                    <button type="submit" class="button">Ok</button>
+                    {{ form_end(registrationForm) }}
+                </div>
+            </div>
+        </div>
+    </section>
+    {{ include('Default/Footer.html.twig') }}
+{% endblock %}

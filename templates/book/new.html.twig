@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Book{% endblock %}
+
+{% block body %}
+    <div class="ContentDataSection">
+        <div class="Content">
+            <h1>Создание нового поста</h1>
+
+            {% set formErrors = form.vars.errors.form.getErrors(true) %}
+            {% if formErrors|length %}
+                <h4 class="errorMessage">Предупреждения!</h4>
+                <ul class="blockError">
+                    {% for error in formErrors %}
+                        <li class="errorMessage">{{ error.message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <div class="DataSection">
+            {{ include('book/_form.html.twig') }}
+        </div>
+    </div>
+{% endblock %}

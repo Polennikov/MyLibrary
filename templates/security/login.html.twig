@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+    <section>
+        <div class="ContentSection">
+            <div class="Content">
+                {% if error %}
+                    <h4 class="errorMessage">Предупреждения!</h4>
+                    <ul class="blockError">
+                        <li class="errorMessage">{{ error.messageKey|trans(error.messageData, 'security') }}</li>
+                    </ul>
+                {% endif %}
+            </div>
+            <form method="post" class="Content">
+                <h1 class="h3 mb-3 font-weight-normal">Авторизация</h1>
+                <h3><label for="inputEmail">Email</label></h3>
+                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control"
+                       required autofocus>
+                <h3><label for="inputPassword">Пароль</label></h3>
+                <input type="password" name="password" id="inputPassword" class="form-control" required>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                <button class="button" type="submit">Ок</button>
+            </form>
+        </div>
+    </section>
+{% endblock %}

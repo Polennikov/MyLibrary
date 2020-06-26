@@ -1,0 +1,175 @@
+html{
+    min-height:100%;
+    background: url(../image/фон3.jpg) no-repeat fixed center top;
+}
+body
+{
+    min-height:100%;
+}
+.container{
+    margin-right: 120px;
+    margin-left: 120px;
+    display: flex;
+    mix-blend-mode: normal;
+    flex-direction: column;
+}
+header
+{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 35px;
+    color: #000000;
+    height: 78px;
+    background: #ADB5AE no-repeat center top / cover;
+    mix-blend-mode: normal;
+
+}
+footer
+{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 35px;
+    color: #000000 no-repeat center top / cover;
+    height: 78px;
+    background: #ADB5AE no-repeat center top / cover;
+    mix-blend-mode: normal;
+
+}
+.headerContent
+{
+    display: flex;
+}
+.buttonContent
+{
+    display: flex;
+}
+.nameHeader
+{
+    margin: auto;
+    margin-right: 10px;
+}
+.textHeader
+{
+    margin: auto;
+}
+.buttonHeader
+{
+    display: flex;
+}
+.button {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 15px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    margin-right: 30px;
+    margin-top: 9px;
+    color: #000000;
+    background: rgb(28, 129, 199);
+}
+.button:hover { background: rgb(10, 40, 167); }
+.button:active {
+    background: rgb(0, 0, 0);
+}
+.ContentSection
+{
+    background: #FFFFFF no-repeat center top / cover;
+    mix-blend-mode: normal;
+    display: flex;
+    flex-direction:column;
+
+}
+.Content
+{
+    flex-direction:column;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+.ContentDataSection
+{
+    background: rgba(255, 243, 202, 0.32) no-repeat center top / cover;
+    mix-blend-mode: normal;
+    display: flex;
+    flex-direction:column;
+
+}
+.DataSection
+{
+    flex-direction:column;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 10px;
+
+
+
+}
+.DataButton
+{
+ justify-content: center;
+    display: flex;
+
+
+}
+textarea
+{
+    width: 450px;
+    height: 100px;
+}
+.ContentDataBlock
+{
+    width: 1000px;
+    border: 1px solid #000000;
+    margin-top: 10px;
+}
+.DataBlock
+{
+    margin-left: 35px;
+    margin-right: 35px;
+
+}
+.titleContent
+{
+    display: flex;
+    justify-content: center;
+}
+.commentsContent
+{
+    margin-right: 20px;
+    margin-left: 20px;
+    display: flex;
+
+
+}
+.endPostContent
+{
+    display: flex;
+    justify-content:space-between;
+    margin-bottom: 20px;
+}
+a
+{
+    text-decoration: none;
+    font-size: 120%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #333366;
+}
+a:hover {color: rgba(0, 0, 0, 0.5); }
+.errorMessage
+{
+    color: #ff0114;
+}
+.blockError
+{
+    border: 1px solid #ff0114;
+}

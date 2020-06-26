@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Book index{% endblock %}
+
+{% block body %}
+
+    <div class="ContentDataSection">
+        <div class="DataSection">
+            {% for book in books %}
+                <div class="ContentDataBlock">
+                    <div class="DataBlock">
+                        <div class='titleContent'>
+                            <td>{{ book.nameBook }}</td>
+                        </div>
+                        <br>
+                        <div class="titleContent">
+                            <td><img src="{{ asset('uploads/image/') }}{{ book.coverPct }}" style="width: 100px;"
+                                     alt=""></td>
+                        </div>
+                        <div class="commentsContent">
+                            Автор:
+                            <td>{{ book.authorBook }}</td>
+                        </div>
+                        <br>
+                        <div class="endPostContent">
+                            <div>
+                                добавлено:
+                                <td>{{ book.dateRead ? book.dateRead|date('Y-m-d H:i:s') : '' }}</td>
+                            </div>
+                            <div>
+                                Файл с книгой:
+                                <td>{{ book.fileBook }}</td>
+                            </div>
+                        </div>
+                        {% if user %}
+                            <a class="button" href="{{ path('book_edit', {'id': book.id}) }}">Изменить</a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% else %}
+                Записей нет
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

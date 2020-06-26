@@ -1,0 +1,13 @@
+{{ form_start(form) }}
+    <h3>{{ form_label(form.nameBook) }}</h3>
+<div>{{ form_widget(form.nameBook) }}</div>
+<h3>{{ form_label(form.authorBook) }}</h3>
+<div>{{ form_widget(form.authorBook) }}</div>
+ <td><img src="{{ asset('uploads/image/') }}{{ book.coverPct }}" style="width: 100px;" alt=""></td>
+<h3>{{ form_label(form.coverPct) }}</h3>
+<div>{{ form_widget(form.coverPct) }}</div>
+<td>{{ book.fileBook}}</td>
+<h3>{{ form_label(form.fileBook) }}</h3>
+<div>{{ form_widget(form.fileBook) }}</div>
+    <button class="button">{{ button_label|default('Добавить книгу') }}</button>
+{{ form_end(form) }}
